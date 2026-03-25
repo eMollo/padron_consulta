@@ -25,7 +25,7 @@ class ConsultaPadronController extends Controller
         $persona = Persona::where('dni', $dni)
             ->with([
                 'inscripciones' => function ($q) {
-                    $q->whereNull('deleted_at'); // 🔥 CLAVE
+                    $q->whereNull('deleted_at'); //  CLAVE
                 },
                 'inscripciones.padron.facultad',
                 'inscripciones.padron.claustro',
