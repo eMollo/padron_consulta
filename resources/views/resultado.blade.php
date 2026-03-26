@@ -22,6 +22,14 @@
 <div class="card mt-5 shadow">
 
 <div class="card-body">
+<div class="card-body text-center">
+
+<!-- LOGO -->
+<img src="{{ asset('images/isologotipo_unco-azul.png') }}" 
+     alt="Logo Universidad" 
+     style="max-height: 80px;" 
+     class="mb-2">
+</div>
 
 <h3 class="mb-4 text-center">
 Resultado

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -22,17 +21,27 @@
 
 <div class="card mt-5 shadow">
 
-<div class="card-body">
+<div class="card-body text-center">
 
-<h3 class="text-center mb-4">
-Consulta de padrón electoral
+<!-- LOGO -->
+<img src="{{ asset('images/isologotipo_unco-azul.png') }}" 
+     alt="Logo Universidad" 
+     style="max-height: 80px;" 
+     class="mb-3">
+
+<h3 class="mb-3">
+    Universidad Nacional del Comahue
 </h3>
+
+<h5 class="mb-2">
+Consulta de padrón electoral  
+</h5>
 
 <form method="POST" action="/buscar">
 
 @csrf
 
-<div class="mb-3">
+<div class="mb-3 text-start">
 
 <label class="form-label">
 Ingrese su DNI
