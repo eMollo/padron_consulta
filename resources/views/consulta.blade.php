@@ -27,8 +27,9 @@
     🔎 Revisá los padrones provisorios.<br>
     Buscate en los padrones elaborados por las unidades académicas.<br>
 
-    ⚠️ Si aparecés más de una vez, solicitá figurar en uno solo.<br>
-    Tenés tiempo de optar hasta el 17 de Abril, 16:00 hs.<br>
+    ⚠️ Si aparecés más de una vez, tenés que optar por uno<br>
+    y solicitarlo por nota a la Junta Electoral.<br>
+    Tenés tiempo hasta el 17 de Abril a las 16:00 hs.<br>
 
     📩 
     <a href="mailto:consejo.superior.unco@gmail.com" class="fw-semibold">
