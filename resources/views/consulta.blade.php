@@ -19,7 +19,26 @@
 
 <div class="col-md-6">
 
-<div class="card mt-5 shadow">
+<!-- BANNER AMARILLO -->
+<div class="mt-5 mb-3 p-3 bg-warning-subtle border-top border-4 border-warning shadow-sm text-center rounded">
+
+    <strong>📢 ¡ATENCIÓN!</strong><br>
+
+    🔎 Revisá los padrones provisorios.<br>
+    Buscate en los padrones elaborados por las unidades académicas.<br>
+
+    ⚠️ Si aparecés más de una vez, solicitá figurar en uno solo.<br>
+    Tenés tiempo de optar hasta el 17 de Abril, 16:00 hs.<br>
+
+    📩 
+    <a href="mailto:consejo.superior.unco@gmail.com" class="fw-semibold">
+        consejo.superior.unco@gmail.com
+    </a>
+
+</div>
+
+<!-- CARD BUSCADOR -->
+<div class="card shadow">
 
 <div class="card-body text-center">
 
@@ -59,9 +78,7 @@ required
 <div class="d-grid">
 
 <button class="btn btn-primary">
-
 Buscar
-
 </button>
 
 </div>

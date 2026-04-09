@@ -31,9 +31,13 @@
      class="mb-2">
 </div>
 
-<h3 class="mb-4 text-center">
-Resultado
+<h3 class="mb-3 text-center">
+    Universidad Nacional del Comahue
 </h3>
+
+<h5 class="mb-4 text-center">
+Resultado
+</h5>
 
 @if(!$persona)
 
