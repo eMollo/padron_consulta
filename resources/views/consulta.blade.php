@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}"></script>
     <meta charset="UTF-8">
@@ -10,7 +9,6 @@
 </head>
 
 <body class="bg-light">
-
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 col-11">
@@ -30,30 +28,20 @@
 
                 <div class="card shadow">
                     <div class="card-body text-center">
-
-                        <img src="{{ asset('images/isologotipo_unco-azul.png') }}" 
-                             alt="Logo Universidad" 
-                             style="max-height: 80px;" 
-                             class="mb-3">
-
+                        <img src="{{ asset('images/isologotipo_unco-azul.png') }}" alt="Logo" style="max-height: 80px;" class="mb-3">
                         <h3 class="mb-3">Universidad Nacional del Comahue</h3>
                         <h5 class="mb-4">Consulta de padrón electoral</h5>
 
-                        <form method="POST" action="/buscar">
+                        <form id="formConsulta" method="POST" action="/buscar">
                             @csrf
-
                             <div class="mb-3 text-start">
                                 <label class="form-label">Ingrese su DNI</label>
-                                <input type="text" name="dni" class="form-control" required placeholder="Sin puntos ni espacios">
+                                <input type="text" name="dni" class="form-control" value="{{ old('dni') }}" required placeholder="Sin puntos ni espacios">
                             </div>
 
-                            <div class="mb-3 d-flex justify-content-center">
-                                <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
-                            </div>
-
-                            @if ($errors->has('g-recaptcha-response') || $errors->has('captcha'))
+                            @if ($errors->has('captcha'))
                                 <div class="alert alert-danger py-2 small">
-                                    Debes completar el captcha correctamente.
+                                    {{ $errors->first('captcha') }}
                                 </div>
                             @endif
 
@@ -63,7 +51,6 @@
                                 </button>
                             </div>
                         </form>
-
                     </div>
                 </div>
 
@@ -71,5 +58,21 @@
         </div>
     </div>
 
+    <script>
+        document.getElementById('formConsulta').addEventListener('submit', function(e) {
+            e.preventDefault();
+            grecaptcha.ready(function() {
+                grecaptcha.execute("{{ config('services.recaptcha.site_key') }}", {action: 'consultar'}).then(function(token) {
+                    let form = document.getElementById('formConsulta');
+                    let input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'g-recaptcha-response';
+                    input.value = token;
+                    form.appendChild(input);
+                    form.submit();
+                });
+            });
+        });
+    </script>
 </body>
 </html>
