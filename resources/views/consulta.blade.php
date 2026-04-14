@@ -13,6 +13,7 @@
         <div class="row justify-content-center">
             <div class="col-md-6 col-11">
 
+                <!-- ALERTA -->
                 <div class="mt-5 mb-3 p-3 bg-warning-subtle border-top border-4 border-warning shadow-sm text-center rounded">
                     <strong>📢 ¡ATENCIÓN!</strong><br>
                     🔎 Revisá los padrones provisorios.<br>
@@ -26,6 +27,34 @@
                     </a>
                 </div>
 
+                <!-- DESCARGAS -->
+                <div class="mb-4 text-center">
+
+                    <p class="mb-2 fw-semibold">
+                        📄 Descargá los modelos de nota:
+                    </p>
+
+                    <div class="d-grid gap-2">
+
+                        <a href="{{ route('descargar.nota.opcion') }}"
+                           class="btn btn-outline-primary">
+                            Descargar nota de opción
+                        </a>
+
+                        <a href="{{ route('descargar.nota.inclusion') }}"
+                           class="btn btn-outline-secondary">
+                            Descargar nota de inclusión
+                        </a>
+
+                    </div>
+
+                    <small class="text-muted">
+                        Usá estos modelos para presentar solicitudes ante la Junta Electoral.
+                    </small>
+
+                </div>
+
+                <!-- FORM -->
                 <div class="card shadow">
                     <div class="card-body text-center">
                         <img src="{{ asset('images/isologotipo_unco-azul.png') }}" alt="Logo" style="max-height: 80px;" class="mb-3">
@@ -34,6 +63,7 @@
 
                         <form id="formConsulta" method="POST" action="/buscar">
                             @csrf
+
                             <div class="mb-3 text-start">
                                 <label class="form-label">Ingrese su DNI</label>
                                 <input type="text" name="dni" class="form-control" value="{{ old('dni') }}" required placeholder="Sin puntos ni espacios">
@@ -50,6 +80,7 @@
                                     CONSULTAR
                                 </button>
                             </div>
+
                         </form>
                     </div>
                 </div>
@@ -61,18 +92,23 @@
     <script>
         document.getElementById('formConsulta').addEventListener('submit', function(e) {
             e.preventDefault();
+
             grecaptcha.ready(function() {
                 grecaptcha.execute("{{ config('services.recaptcha.site_key') }}", {action: 'consultar'}).then(function(token) {
-                    let form = document.getElementById('formConsulta');
-                    let input = document.createElement('input');
-                    input.type = 'hidden';
-                    input.name = 'g-recaptcha-response';
-                    input.value = token;
-                    form.appendChild(input);
-                    form.submit();
-                });
-            });
-        });
+
+                    let form = document.getElementById('formConsulta')
+
+                    let input = document.createElement('input')
+                    input.type = 'hidden'
+                    input.name = 'g-recaptcha-response'
+                    input.value = token
+
+                    form.appendChild(input)
+                    form.submit()
+                })
+            })
+        })
     </script>
+
 </body>
 </html>
