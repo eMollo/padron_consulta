@@ -13,8 +13,9 @@
         <div class="row justify-content-center">
             <div class="col-md-6 col-11">
 
-                <!-- ALERTA -->
+                <!-- ALERTA 
                 <div class="mt-5 mb-3 p-3 bg-warning-subtle border-top border-4 border-warning shadow-sm text-center rounded">
+                    
                     <strong>📢 ¡ATENCIÓN!</strong><br>
                     🔎 Revisá los padrones provisorios.<br>
                     Buscate en los padrones elaborados por las unidades académicas.<br>
@@ -25,9 +26,9 @@
                     <a href="mailto:consejo.superior.unco@gmail.com" class="fw-semibold">
                         consejo.superior.unco@gmail.com
                     </a>
-                </div>
+                </div> -->
 
-                <!-- DESCARGAS -->
+                <!-- DESCARGAS 
                 <div class="mb-4 text-center">
 
                     <p class="mb-2 fw-semibold">
@@ -52,10 +53,10 @@
                         Usá estos modelos para presentar solicitudes ante la Junta Electoral.
                     </small>
 
-                </div>
+                </div> -->
 
                 <!-- FORM -->
-                <div class="card shadow">
+                <div class="card shadow mt-5">
                     <div class="card-body text-center">
                         <img src="{{ asset('images/isologotipo_unco-azul.png') }}" alt="Logo" style="max-height: 80px;" class="mb-3">
                         <h3 class="mb-3">Universidad Nacional del Comahue</h3>
